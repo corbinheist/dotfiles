@@ -1,0 +1,39 @@
+" Setup for VimWiki
+set nocompatible
+filetype plugin on
+syntax on
+let g:vimwiki_list = [{'path': '~/Documents/corbin-notes/',
+\ 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_global_ext = 0
+" Show <leader> Key
+set showcmd
+" Color Theme Ayu
+set termguicolors     " enable true colors support
+" let ayucolor="light"  " for light version of theme
+" let ayucolor="mirage"  for mirage version of theme
+" let ayucolor="dark"    for dark version of theme
+packadd! everforest
+" Important!!
+
+if has('termguicolors')
+  set termguicolors
+endif
+
+" For dark version.
+set background=dark
+
+" For light version.
+" set background=light
+
+" Set contrast.
+" This configuration option should be placed before `colorscheme everforest`.
+" Available values: 'hard', 'medium'(default), 'soft'
+let g:everforest_background = 'soft'
+
+" For better performance
+let g:everforest_better_performance = 1
+
+colorscheme everforest
+
+" Enable Syntax Highlighting in Markdown
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
